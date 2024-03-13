@@ -1,0 +1,106 @@
+html[class] {
+  overflow: unset;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex-items,
+%flex-items {
+  &-center {
+    display: flex;
+    align-items: center;
+  }
+
+  &-start {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &-end {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &-baseline {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.flex-justify,
+%flex-justify {
+  &-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-start {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &-end {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.flex-row,
+%flex-row {
+  display: flex;
+  flex-flow: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-row-reverse {
+  @extend %flex-row;
+
+  flex-flow: row-reverse;
+}
+
