@@ -1,0 +1,53 @@
+.user-mini-card {
+  overflow: hidden;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px $blackOverlay10;
+}
+
+.user-mini-card__image-wrap {
+  position: relative;
+  width: 70px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.user-mini-card__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.user-mini-card__body {
+  padding: 15px 34px 15px 15px;
+  width: 100%;
+  border-left: 1px solid $lightGray;
+}
+
+.user-mini-card__user-name {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  color: $darkGrey;
+}
+
+.user-mini-card__email {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: $lightGraphite;
+}
+
+.user-mini-card.active {
+  border: 1px solid $lightGray;
+}
+
+.user-mini-card.active .user-mini-card__body {
+  background: $lightGray;
+}
