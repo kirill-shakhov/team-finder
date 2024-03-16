@@ -5,7 +5,7 @@ const $api = createAxiosInstance();
 
 class UsersApi {
 
-  async getUsers(params): Promise<GetUsersResponse> {
+  async getUsers(params: string): Promise<GetUsersResponse> {
     const { data } = await $api.get<GetUsersResponse>(`/users?${params}`);
 
     return data;
