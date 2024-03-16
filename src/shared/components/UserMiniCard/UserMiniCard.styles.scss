@@ -3,6 +3,11 @@
   display: flex;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px $blackOverlay10;
+  border: 1px solid transparent;
+
+  @include lg {
+    cursor: pointer;
+  }
 }
 
 .user-mini-card__image-wrap {
@@ -24,7 +29,7 @@
 }
 
 .user-mini-card__body {
-  padding: 15px 34px 15px 15px;
+  padding: 15px 13px;
   width: 100%;
   border-left: 1px solid $lightGray;
 }
