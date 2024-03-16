@@ -1,6 +1,6 @@
-import { usersStore } from '@/store/modules/usersStore';
+import { UsersState } from '@/store/modules/usersStore';
 
 
 export interface RootState {
-    users: usersStore;
+    users: UsersState;
 }
