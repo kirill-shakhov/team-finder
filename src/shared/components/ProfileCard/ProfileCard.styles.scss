@@ -1,0 +1,97 @@
+.profile-card {
+  padding: 30px 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+
+  @include lg {
+    flex-direction: row;
+  }
+}
+
+.profile-card__image-wrap {
+  position: relative;
+  aspect-ratio: 1/1;
+  border: 1px solid $lightGray;
+  border-radius: 1px;
+  overflow: hidden;
+
+  @include lg {
+    aspect-ratio: initial;
+    width: 50%;
+    height: auto;
+  }
+}
+
+.profile-card__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.profile-card__body {
+
+  @include lg {
+    width: 50%;
+    height: auto;
+  }
+}
+
+.profile-card__name {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: $black;
+}
+
+.profile-card__email {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.profile-card__label {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+  color: $darkGrey;
+}
+
+.profile-card__value {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $lightGraphite;
+  text-decoration: none;
+}
+
+.profile-card__phone {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.profile-card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.profile-card__description-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+  color: $darkGrey;
+}
+
+.profile-card__description-text {
+  color: $lightGraphite;
+}
