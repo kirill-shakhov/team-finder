@@ -3,10 +3,17 @@
     <app-header />
 
     <div class="home-view__body">
-      <app-sidebar class="home-view__sidebar"/>
+      <app-sidebar class="home-view__sidebar" />
 
       <div class="home-view__content">
-        1212
+        <profile-card
+          v-if="currentUser"
+          :user="currentUser"
+        />
+
+        <div class="home-view__message" v-else>
+          Выберите сотрудника, чтобы посмотреть его профиль
+        </div>
       </div>
     </div>
   </div>
@@ -14,6 +21,13 @@
 <script setup lang="ts">
 import AppSidebar from '@/shared/components/AppSidebar/AppSidebar.vue';
 import AppHeader from '@/shared/components/AppHeader/AppHeader.vue';
+import ProfileCard from '@/shared/components/ProfileCard/ProfileCard.vue';
+import { computed, ComputedRef } from 'vue';
+import { User } from '@/services/api/controllers';
+import { store } from '@/store';
+
+
+const currentUser: ComputedRef<User> = computed(() => store.getters['users/currentUser']);
 </script>
 
 <style scoped lang="scss">
@@ -22,6 +36,7 @@ import AppHeader from '@/shared/components/AppHeader/AppHeader.vue';
   flex-wrap: wrap;
   box-shadow: 0px 0px 10px 0px #0000001A;
   border-radius: 10px;
+  min-height: 575px;
 }
 
 .home-view__sidebar {
@@ -34,5 +49,17 @@ import AppHeader from '@/shared/components/AppHeader/AppHeader.vue';
   flex-grow: 999;
   min-inline-size: 50%;
   border-left: 1px solid $paleGrey;
-  }
+}
+
+.home-view__message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: $lightGraphite;
+}
 </style>
