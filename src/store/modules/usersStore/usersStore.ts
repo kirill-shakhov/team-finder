@@ -1,16 +1,18 @@
 import { UsersState } from '@/store/modules/usersStore/usersStore.types.ts';
 import { ActionContext, ActionTree, GetterTree, MutationTree } from 'vuex';
 import { RootState } from '@/store';
-import { GetUsersResponse, usersApi } from '@/services/api/controllers';
+import { GetUsersResponse, User, usersApi } from '@/services/api/controllers';
 
 
 const state: UsersState = {
   users: [],
+  currentUser: null,
 };
 
 
 const getters: GetterTree<UsersState, RootState> = {
   users: (state: UsersState) => state.users,
+  currentUser: (state: UsersState) => state.currentUser,
 };
 
 const actions: ActionTree<UsersState, RootState> = {
@@ -32,6 +34,14 @@ const mutations: MutationTree<UsersState> = {
 
   resetUsers(state: UsersState) {
     state.users = [];
+  },
+
+  setCurrentUser(state: UsersState, currentUser: User) {
+    state.currentUser = currentUser;
+  },
+
+  resetCurrentUser(state: UsersState) {
+    state.currentUser = null;
   },
 };
 export default {
