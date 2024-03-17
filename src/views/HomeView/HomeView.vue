@@ -1,7 +1,6 @@
 <template>
   <div class="home-view">
     <app-header />
-
     <div class="home-view__body">
       <app-sidebar class="home-view__sidebar" />
 
@@ -19,13 +18,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import AppSidebar from '@/shared/components/AppSidebar/AppSidebar.vue';
-import AppHeader from '@/shared/components/AppHeader/AppHeader.vue';
-import ProfileCard from '@/shared/components/ProfileCard/ProfileCard.vue';
+import { AppHeader } from '@/shared/components/AppHeader';
+import { AppSidebar } from '@/shared/components/AppSidebar';
+import { ProfileCard } from '@/shared/components/ProfileCard';
+
 import { computed, ComputedRef } from 'vue';
 import { User } from '@/services/api/controllers';
 import { store } from '@/store';
-
 
 const currentUser: ComputedRef<User> = computed(() => store.getters['users/currentUser']);
 </script>
