@@ -56,9 +56,13 @@ const currentUser: ComputedRef<User> = computed(() => store.getters['users/curre
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 17px;
   color: $lightGraphite;
+
+  @include tablet {
+    font-size: 14px;
+  }
 }
 </style>
