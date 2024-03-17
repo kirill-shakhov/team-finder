@@ -16,7 +16,6 @@
 
     <div class="app-sidebar__wrapper">
       <h3 class="app-sidebar__results-title app-sidebar__title">Результаты</h3>
-
       <search-results-list
         v-if="users"
         :users="users"
@@ -29,9 +28,9 @@
   </aside>
 </template>
 <script setup lang="ts">
-import { UiInput } from '@/shared/components/UiInput';
-import SearchResultsList from '@/shared/components/SearchResultsList/SearchResultsList.vue';
 import { useAppSidebar } from '@/shared/components/AppSidebar/AppSidebar.composables.ts';
+import { SearchResultsList } from '@/shared/components/SearchResultsList';
+import { UiInput } from '@/shared/components/UiInput';
 
 const { inputSearchValue, handleInputChange, errorMessage, users } = useAppSidebar();
 
