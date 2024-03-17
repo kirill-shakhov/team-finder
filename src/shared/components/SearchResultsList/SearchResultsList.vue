@@ -14,10 +14,11 @@
   </div>
   <div v-if="users.length === 0" class="search-results-list-message">ничего не найдено</div>
 </template>
+
 <script setup lang="ts">
-import UserMiniCard from '@/shared/components/UserMiniCard/UserMiniCard.vue';
 import { useSearchResultsList } from '@/shared/components/SearchResultsList/SearchResultsList.composables.ts';
 import { Props } from '@/shared/components/SearchResultsList/SearchResultsList.types.ts';
+import { UserMiniCard } from '@/shared/components/UserMiniCard';
 
 
 defineProps<Props>();
