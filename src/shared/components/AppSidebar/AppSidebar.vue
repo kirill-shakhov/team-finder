@@ -17,6 +17,7 @@
     <div class="app-sidebar__wrapper">
       <h3 class="app-sidebar__results-title app-sidebar__title">Результаты</h3>
       <div v-if="loading">loading...</div>
+
       <search-results-list
         v-if="users"
         :users="users"
