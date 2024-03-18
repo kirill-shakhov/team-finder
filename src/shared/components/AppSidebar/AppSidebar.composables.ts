@@ -13,13 +13,14 @@ export function useAppSidebar() {
   const errorMessage: Ref<string> = ref('');
   const users: Ref<User[] | null> = ref(null);
   const currentUser: Ref<User | null> = ref(null);
+  const loading: Ref<boolean> = ref(false);
 
   const validateInput = (str: string): boolean => {
     str = str.trim();
 
     if (str.trim() === '') return true;
     const values: string[] = str.split(/[, ]+/);
-    return values.every(value => isNumericString(values[0]) ? isNumericString(value) : isAlphabeticString(value));
+    return values.every((value: string): boolean => isNumericString(values[0]) ? isNumericString(value) : isAlphabeticString(value));
   };
 
   const collectData = (str: string): string => {
@@ -29,10 +30,11 @@ export function useAppSidebar() {
   };
 
   const getUsers = async (query: string) => {
+    loading.value = true;
     await store.dispatch('users/getUsers', query);
 
     users.value = store.getters['users/users'];
-    console.log(users.value);
+    loading.value = false;
   };
 
   const debouncedGetUsers = debounceFn(getUsers, { wait: 300 });
@@ -60,10 +62,12 @@ export function useAppSidebar() {
 
   return {
     inputSearchValue,
-    handleInputChange,
     errorMessage,
     users,
     currentUser,
+    loading,
+
+    handleInputChange,
   };
 
 }
