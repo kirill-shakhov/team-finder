@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
-export function createAxiosInstance() {
-    return axios.create({
-        baseURL: import.meta.env.VITE_API_URL,
-    });
+export function createAxiosInstance(): AxiosInstance {
+  return axios.create({
+    baseURL: import.meta.env.VITE_API_URL,
+  });
 }
 
 
